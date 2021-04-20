@@ -11,10 +11,8 @@
         "twxs.cmake",
         "ms-vscode.cmake-tools",
         "docsmsft.docs-markdown",
-        "xaver.clang-format",
         "cschlosser.doxdocgen",
-        "cheshirekow.cmake-format",
-        "notskm.clang-tidy"
+        "cheshirekow.cmake-format"
     ],
-    "postCreateCommand": "make install"
+    "postCreateCommand": "pip install -r requirements.txt"
 }
