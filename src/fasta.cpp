@@ -32,6 +32,48 @@ Fasta &Fasta::operator+(const Fasta &rhs) {
 
 Fasta &Fasta::operator+=(const Fasta &rhs) { return *this + rhs; }
 
+bool Fasta::operator==(Fasta *rhs) const {
+    if (this->Blocks.size() != rhs->Blocks.size()) {
+        return false;
+    }
+
+    for (size_t index = 0; index < this->Blocks.size(); index++) {
+        if (this->Blocks[index].getHeader() != rhs->Blocks[index].getHeader()) {
+            return false;
+        }
+
+        if (this->Blocks[index].getComment() != rhs->Blocks[index].getComment()) {
+            return false;
+        }
+
+        if (this->Blocks[index].getSequence() != rhs->Blocks[index].getSequence()) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool Fasta::operator!=(Fasta *rhs) const {
+    if (this->Blocks.size() != rhs->Blocks.size()) {
+        return true;
+    }
+
+    for (size_t index = 0; index < this->Blocks.size(); index++) {
+        if (this->Blocks[index].getHeader() != rhs->Blocks[index].getHeader()) {
+            return true;
+        }
+
+        if (this->Blocks[index].getComment() != rhs->Blocks[index].getComment()) {
+            return true;
+        }
+
+        if (this->Blocks[index].getSequence() != rhs->Blocks[index].getSequence()) {
+            return true;
+        }
+    }
+    return false;
+}
+
 void Fasta::push_back(Block block) { this->Blocks.push_back(block); }
 
 Fasta read(std::stringstream &ss) {

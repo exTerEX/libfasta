@@ -51,8 +51,8 @@ class Fasta {
     Fasta &operator+(const Fasta &);
     Fasta &operator+=(const Fasta &);
 
-    bool operator==(Fasta) const; // x
-    bool operator!=(Fasta) const; // x
+    bool operator==(Fasta *) const;
+    bool operator!=(Fasta *) const;
 
     bool empty() const; // x
 
