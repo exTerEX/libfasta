@@ -1,3 +1,13 @@
+/**
+ * \file block.cpp
+ *
+ * \brief Source code for FASTA elements, i.e. a complete selection of related header,
+ * comment and sequence. This is contained as one "Block" element within the "Fasta"
+ * object.
+ *
+ * \copyright Copyright (c) 2021 Andreas Sagen
+ */
+
 #include "bio/fasta.hpp"
 
 namespace Fasta {
