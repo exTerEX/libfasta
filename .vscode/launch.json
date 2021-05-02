@@ -16,9 +16,16 @@
                 }
             ],
             "externalConsole": false,
-            "MIMode": "lldb",
-            "miDebuggerPath": "lldb",
-            "setupCommands": []
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "targetArchitecture": "x64",
+            "setupCommands": [
+                {
+                    "text": "-enable-pretty-printing",
+                    "description": "Enable GDB pretty printing",
+                    "ignoreFailures": true
+                }
+            ]
         }
     ]
 }
