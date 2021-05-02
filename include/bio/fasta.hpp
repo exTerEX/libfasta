@@ -22,14 +22,15 @@ class Block {
     std::string Sequence;
 
   protected:
-    std::string getHeader() const;
-    std::string getComment() const;
-    std::string getSequence() const;
-
+  
   public:
     Block() = default;
     Block(std::string, std::string, std::string = NULL);
     ~Block() = default;
+
+    std::string getHeader() const;
+    std::string getComment() const;
+    std::string getSequence() const;
 };
 
 class Fasta {
