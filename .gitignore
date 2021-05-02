@@ -8,7 +8,7 @@
 
 ### C/C++
 *.debug
-*.debug.so
+*.so*
 
 # CMake
 CMakeLists.txt.*
