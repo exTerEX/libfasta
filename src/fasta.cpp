@@ -78,6 +78,10 @@ bool Fasta::empty() const { return this->Blocks.empty(); }
 
 void Fasta::push_back(Block block) { this->Blocks.push_back(block); }
 
+std::vector<Block>::iterator Fasta::begin() { return this->Blocks.begin(); }
+
+std::vector<Block>::iterator Fasta::end() { return this->Blocks.end(); }
+
 Fasta read(std::stringstream &ss) {
     std::string currentHeader;
     std::string currentComment;

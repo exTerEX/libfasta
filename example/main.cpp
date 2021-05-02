@@ -11,4 +11,8 @@ int main(int argc, char **argv) {
     ss << file.rdbuf();
 
     Fasta::Fasta test = Fasta::read(ss);
+
+    for (auto &element : test) {
+        std::cout << element.getSequence() << std::endl;
+    }
 }
