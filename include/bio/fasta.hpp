@@ -1,5 +1,13 @@
-#ifndef FASTA_HPP
-#define FASTA_HPP
+/**
+ * \file fasta.hpp
+ *
+ * \brief Public header file to interact with FASTA files.
+ *
+ * \copyright Copyright (c) 2021 Andreas Sagen
+ */
+
+#ifndef BIO_FASTA_HPP
+#define BIO_FASTA_HPP
 
 #include <fstream>
 #include <string>
@@ -58,4 +66,4 @@ std::stringstream write(Fasta);
 
 } // namespace Fasta
 
-#endif // FASTA_HPP
+#endif // BIO_FASTA_HPP

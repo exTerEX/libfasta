@@ -1,8 +1,14 @@
+/**
+ * \file fasta.cpp
+ *
+ * \brief Source code for FASTA elements wrapped around the concept of blocks. For a
+ * description of the block concept see block.cpp.
+ *
+ * \copyright Copyright (c) 2021 Andreas Sagen
+ */
+
 #include "bio/fasta.hpp"
 #include <sstream>
-
-// TODO: REMOVE AFTER DEBUGGING!!!
-#include <iostream>
 
 namespace Fasta {
 
