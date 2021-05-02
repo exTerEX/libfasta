@@ -55,7 +55,7 @@ class Fasta {
     bool operator==(Fasta *) const;
     bool operator!=(Fasta *) const;
 
-    bool empty() const; // x
+    bool empty() const;
 
     void push_back(Block);
 

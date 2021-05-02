@@ -74,6 +74,8 @@ bool Fasta::operator!=(Fasta *rhs) const {
     return false;
 }
 
+bool Fasta::empty() const { return this->Blocks.empty(); }
+
 void Fasta::push_back(Block block) { this->Blocks.push_back(block); }
 
 Fasta read(std::stringstream &ss) {
