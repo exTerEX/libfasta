@@ -1,24 +1,29 @@
-cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.11 FATAL_ERROR)
 
 project(
   fasta
   LANGUAGES CXX
   VERSION 0.1.0)
 
-set(CXX_STANDARD 14)
+if("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
+  set(CMAKE_STATIC_LIBRARY_SUFFIX .so)
+  set(CMAKE_EXECUTABLE_SUFFIX)
 
-set(CMAKE_STATIC_LIBRARY_SUFFIX .so)
+  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+  set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/lib)
+  set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/lib)
+else()
+  set(CMAKE_STATIC_LIBRARY_SUFFIX .debug.so)
+  set(CMAKE_EXECUTABLE_SUFFIX .debug)
 
-include_directories(include)
+  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
+  set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
+  set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
+endif()
 
-add_library(${PROJECT_NAME} STATIC src/fasta.cpp)
-target_include_directories(
-  ${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-                         $<INSTALL_INTERFACE:include>)
-set_target_properties(
-  ${PROJECT_NAME}
-  PROPERTIES LINKER_LANGUAGE CXX PREFIX lib)
+if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+  set(CMAKE_C_CLANG_TIDY clang-tidy -checks=-*,readability-*)
+endif()
 
-add_executable(main example/main.cpp)
-set_target_properties(main PROPERTIES LINKER_LANGUAGE CXX)
-target_link_libraries(main ${PROJECT_NAME})
+add_subdirectory(src)
+add_subdirectory(example)
