@@ -22,7 +22,6 @@ class Block {
     std::string Sequence;
 
   protected:
-  
   public:
     Block() = default;
     Block(std::string, std::string, std::string = NULL);
@@ -59,7 +58,8 @@ class Fasta {
 
     void push_back(Block);
 
-    // TODO: Implement begin() / end()
+    std::vector<Block>::iterator begin();
+    std::vector<Block>::iterator end();
 };
 
 Fasta read(std::stringstream &);
