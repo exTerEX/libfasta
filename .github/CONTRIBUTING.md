@@ -16,16 +16,9 @@ Always comply with the [CODE_OF_CONDUCT](https://github.com/exTerEX/libfasta/blo
 
 ## Style and language
 
-The core library is developed in C++. This project relies on LLVM styles. It is provided a .clang-format file to control how some formatters will format the code, but this doesn't cover every aspect of the prefeered syntax. Most importantly on your part, all **type names** should be nouns and start with an upper-case letter.
+This project follow the LLVM style guide. It is provided a .clang-format file to control how some formatters will format the code, but this doesn't cover every aspect of the prefeered syntax. Most importantly on your part, not covered by formatters are **type names**. Use descriptive type names and try to mimic the STL interface when appropriate.
 
-- Variable names: Noun / PascalCase
-- Function names: Verb / camelCase
-- Enumerators: Noun / PascalCase
-- Public member variable: Noun / PascalCase
-
-Exceptions are given if the goal of a public member variable or public member function intend to mimic STL classes (I.E. begin(), push_back(), empty(), etc.)
-
-Futher details can be found in [llvm.org](https://llvm.org/docs/CodingStandards.html).
+Futher details can be found at [llvm.org](https://llvm.org/docs/CodingStandards.html).
 
 ## Filestructure
 
