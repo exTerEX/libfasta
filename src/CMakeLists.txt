@@ -7,4 +7,4 @@ set_target_properties(
   PROPERTIES LINKER_LANGUAGE CXX
              SOVERSION ${PROJECT_VERSION_MAJOR}
              PREFIX lib
-             CXX_STANDARD 17)
+             CXX_STANDARD 11)
