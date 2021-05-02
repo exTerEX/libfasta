@@ -64,16 +64,12 @@ Fasta read(std::stringstream &ss) {
 
             // Set sequenceReached flag
             sequenceReached = false;
-
-            std::cout << "Head" << std::endl;
         } else if (line[0] == ';' && !sequenceReached) {
             // Remove ';' in comment line
             line.erase(0, 1);
 
             // Add current line to current comment
             currentComment += line;
-
-            std::cout << "Comment" << std::endl;
         } else {
             // Shrink comment size
             currentComment.shrink_to_fit();
@@ -83,8 +79,6 @@ Fasta read(std::stringstream &ss) {
 
             // Set sequenceReached flag
             sequenceReached = true;
-
-            std::cout << "Seq" << std::endl;
         }
     }
 
