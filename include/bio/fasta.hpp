@@ -41,14 +41,14 @@ class Fasta {
     Fasta(std::vector<block_t> __x);
     ~Fasta() = default;
 
-    block_t operator[](unsigned index) const;
-    block_t at(unsigned index) const;
+    block_t operator[](unsigned __n) const;
+    block_t at(unsigned __n) const;
 
-    Fasta &operator+(const Fasta &rhs);
-    Fasta &operator+=(const Fasta &rhs);
+    Fasta &operator+(const Fasta &__rhs);
+    Fasta &operator+=(const Fasta &__rhs);
 
-    bool operator==(Fasta *rhs) const;
-    bool operator!=(Fasta *rhs) const;
+    bool operator==(Fasta *__rhs) const;
+    bool operator!=(Fasta *__rhs) const;
 
     bool empty() const;
 
@@ -60,8 +60,8 @@ class Fasta {
     std::vector<block_t>::iterator end();
 };
 
-Fasta read(std::stringstream &);
-std::stringstream write(Fasta);
+Fasta read(std::stringstream &__ss);
+std::stringstream write(Fasta __x);
 
 } // namespace Fasta
 
