@@ -21,3 +21,4 @@ build/compile_commands.json
 build/*.ninja*
 .cmake
 bin/**
+build/*.tcl
