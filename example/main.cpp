@@ -13,6 +13,6 @@ int main(int argc, char **argv) {
     Fasta::Fasta test = Fasta::read(ss);
 
     for (auto &element : test) {
-        std::cout << element.getSequence() << std::endl;
+        std::cout << element.sequence<< std::endl;
     }
 }
