@@ -17,56 +17,56 @@ Fasta::Fasta(std::vector<block_t> __x) { this->Blocks = __x; }
 
 std::vector<block_t> Fasta::getBlocks() const { return this->Blocks; }
 
-block_t Fasta::operator[](unsigned index) const { return this->at(index); }
+block_t Fasta::operator[](unsigned __n) const { return this->at(__n); }
 
-block_t Fasta::at(unsigned index) const { return this->Blocks[index]; }
+block_t Fasta::at(unsigned __n) const { return this->Blocks[__n]; }
 
-Fasta &Fasta::operator+(const Fasta &rhs) {
-    for (auto &element : rhs.getBlocks()) {
+Fasta &Fasta::operator+(const Fasta &__rhs) {
+    for (auto &element : __rhs.getBlocks()) {
         this->Blocks.push_back(element);
     }
 
     return *this;
 }
 
-Fasta &Fasta::operator+=(const Fasta &rhs) { return *this + rhs; }
+Fasta &Fasta::operator+=(const Fasta &__rhs) { return *this + __rhs; }
 
-bool Fasta::operator==(Fasta *rhs) const {
-    if (this->Blocks.size() != rhs->Blocks.size()) {
+bool Fasta::operator==(Fasta *__rhs) const {
+    if (this->Blocks.size() != __rhs->Blocks.size()) {
         return false;
     }
 
     for (size_t index = 0; index < this->Blocks.size(); index++) {
-        if (this->Blocks[index].header != rhs->Blocks[index].header) {
+        if (this->Blocks[index].header != __rhs->Blocks[index].header) {
             return false;
         }
 
-        if (this->Blocks[index].comment != rhs->Blocks[index].comment) {
+        if (this->Blocks[index].comment != __rhs->Blocks[index].comment) {
             return false;
         }
 
-        if (this->Blocks[index].sequence != rhs->Blocks[index].sequence) {
+        if (this->Blocks[index].sequence != __rhs->Blocks[index].sequence) {
             return false;
         }
     }
     return true;
 }
 
-bool Fasta::operator!=(Fasta *rhs) const {
-    if (this->Blocks.size() != rhs->Blocks.size()) {
+bool Fasta::operator!=(Fasta *__rhs) const {
+    if (this->Blocks.size() != __rhs->Blocks.size()) {
         return true;
     }
 
     for (size_t index = 0; index < this->Blocks.size(); index++) {
-        if (this->Blocks[index].header != rhs->Blocks[index].header) {
+        if (this->Blocks[index].header != __rhs->Blocks[index].header) {
             return true;
         }
 
-        if (this->Blocks[index].comment != rhs->Blocks[index].comment) {
+        if (this->Blocks[index].comment != __rhs->Blocks[index].comment) {
             return true;
         }
 
-        if (this->Blocks[index].sequence != rhs->Blocks[index].sequence) {
+        if (this->Blocks[index].sequence != __rhs->Blocks[index].sequence) {
             return true;
         }
     }
