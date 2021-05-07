@@ -12,16 +12,22 @@
 
 namespace Fasta {
 
-Block::Block(std::string header, std::string sequence, std::string comment) {
-    this->Header = header;
-    this->Comment = comment;
-    this->Sequence = sequence;
+block::block(std::string header, std::string sequence) {
+    this->header = header;
+    this->comment = "";
+    this->sequence = sequence;
 }
 
-std::string Block::getHeader() const { return this->Header; }
+block::block(std::string header, std::string comment, std::string sequence) {
+    this->header = header;
+    this->comment = comment;
+    this->sequence = sequence;
+}
 
-std::string Block::getComment() const { return this->Comment; }
-
-std::string Block::getSequence() const { return this->Sequence; }
+void block::erase() {
+    this->header.erase();
+    this->comment.erase();
+    this->sequence.erase();
+}
 
 } // namespace Fasta
