@@ -37,8 +37,8 @@ class Fasta {
 
   public:
     Fasta() = default;
-    Fasta(block_t block);
-    Fasta(std::vector<block_t> block);
+    Fasta(block_t __block);
+    Fasta(std::vector<block_t> __blocks);
     ~Fasta() = default;
 
     block_t operator[](unsigned __n) const;
@@ -52,7 +52,7 @@ class Fasta {
 
     bool empty() const;
 
-    void push_back(const block_t &block);
+    void push_back(const block_t &__block);
 
     std::size_t size() const;
 
@@ -61,7 +61,7 @@ class Fasta {
 };
 
 Fasta read(std::stringstream &__ss);
-std::stringstream write(Fasta file);
+std::stringstream write(Fasta __obj);
 
 } // namespace Fasta
 
