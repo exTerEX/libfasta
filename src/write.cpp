@@ -11,6 +11,6 @@
 
 namespace Fasta {
 
-std::stringstream write(Fasta Content) { return std::stringstream(NULL); }
+std::stringstream write(Fasta file) { return std::stringstream(NULL); }
 
 } // namespace Fasta
