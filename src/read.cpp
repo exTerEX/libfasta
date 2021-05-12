@@ -53,7 +53,7 @@ Fasta read(std::stringstream &__ss) {
 
             current.comment = line;
         } else if (!line.empty()) {
-            current.sequence = line;
+            current.sequence += line;
             sequenceReached = true;
         } else {
             continue;
