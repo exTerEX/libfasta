@@ -12,5 +12,6 @@
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "[makefile]": {
         "editor.insertSpaces": false
-    }
+    },
+    "C_Cpp.autoAddFileAssociations": false
 }
