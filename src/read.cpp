@@ -7,6 +7,7 @@
  */
 
 #include "bio/fasta.hpp"
+#include "utilities/trim.hpp"
 #include <iostream>
 #include <sstream>
 
@@ -24,7 +25,9 @@ Fasta read(std::stringstream &__ss) {
 
     // Read lines in stringstream
     for (std::string line; std::getline(__ss, line);) {
-        // TODO: remove trailing whitespace on line
+        // Remove trailing whitespace
+        line = rtrim(line);
+
         if ((line[0] == '>' || line[0] == ';') && sequenceReached) {
             // Flush previous block
             if (!current.header.empty()) {
@@ -35,13 +38,20 @@ Fasta read(std::stringstream &__ss) {
             // Remove '>' in header line
             line.erase(0, 1);
 
+            // Remove leading whitespaces
+            line = ltrim(line);
+
             // Add current line to current header
             current.header = line;
             sequenceReached = false;
         } else if (line[0] == ';' && !sequenceReached) {
             // Remove '>' in header line
             line.erase(0, 1);
-            current.comment = line; // TODO: remove whitespace before comment
+
+            // Remove leading whitespaces
+            line = ltrim(line);
+
+            current.comment = line;
         } else if (!line.empty()) {
             current.sequence = line;
             sequenceReached = true;
