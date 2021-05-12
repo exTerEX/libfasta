@@ -11,9 +11,9 @@
 
 namespace Fasta {
 
-Fasta::Fasta(block_t block) { this->Blocks.push_back(block); }
+Fasta::Fasta(block_t __block) { this->Blocks.push_back(__block); }
 
-Fasta::Fasta(std::vector<block_t> block) { this->Blocks = block; }
+Fasta::Fasta(std::vector<block_t> __blocks) { this->Blocks = __blocks; }
 
 std::vector<block_t> Fasta::getBlocks() const { return this->Blocks; }
 
@@ -75,7 +75,7 @@ bool Fasta::operator!=(Fasta *__rhs) const {
 
 bool Fasta::empty() const { return this->Blocks.empty(); }
 
-void Fasta::push_back(const block_t &block) { this->Blocks.push_back(block); }
+void Fasta::push_back(const block_t &__block) { this->Blocks.push_back(__block); }
 
 std::size_t Fasta::size() const { return this->Blocks.size(); }
 
