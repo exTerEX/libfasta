@@ -1,4 +1,4 @@
-name: CodeQL
+name: Security Scan
 
 on:
   push:
@@ -18,8 +18,8 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-  analyze:
-    name: Analyze
+  codeql-security-scan:
+    name: CodeQL Security Scan
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -51,5 +51,10 @@ jobs:
       - name: Build
         run: cmake --build ${{ github.workspace }}/build --config ${{ env.BUILD_TYPE }}
 
-      - name: Perform CodeQL Analysis
+      - name: Run CodeQL Analysis
         uses: github/codeql-action/analyze@v1
+
+      - name: Upload SARIF results file
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: results.sarif
