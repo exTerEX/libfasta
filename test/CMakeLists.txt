@@ -1,9 +1,9 @@
 include(CTest)
 
-# test_block
-add_executable(block test_block.cpp)
-target_link_libraries(block ${PROJECT_NAME})
-add_test(test_block block)
-set_tests_properties(
-  test_block PROPERTIES FAIL_REGULAR_EXPRESSION "(Exception|Assertion|failed.)"
-                        TIMEOUT 120)
+set(CMAKE_EXECUTABLE_SUFFIX)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
+
+# Added tests
+create_test(test_block)
+
+enable_testing()
