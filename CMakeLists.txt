@@ -27,4 +27,9 @@ endif()
 
 add_subdirectory(src)
 add_subdirectory(example)
-add_subdirectory(test)
+
+# Only create tests if in debug mode
+if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+  include(cmake/create_test.cmake)
+  add_subdirectory(test)
+endif()
