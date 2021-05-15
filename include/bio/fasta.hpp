@@ -13,7 +13,7 @@
 #include <string>
 #include <vector>
 
-namespace Fasta {
+namespace fasta {
 
 typedef struct block {
     std::string header;
@@ -28,27 +28,27 @@ typedef struct block {
     void erase();
 } block_t;
 
-class Fasta {
+typedef class fasta {
   private:
-    std::vector<block_t> Blocks;
+    std::vector<block_t> blocks;
 
   protected:
     std::vector<block_t> getBlocks() const;
 
   public:
-    Fasta() = default;
-    Fasta(block_t __block);
-    Fasta(std::vector<block_t> __blocks);
-    ~Fasta() = default;
+    fasta() = default;
+    fasta(block_t __block);
+    fasta(std::vector<block_t> __blocks);
+    ~fasta() = default;
 
     block_t operator[](unsigned __n) const;
     block_t at(unsigned __n) const;
 
-    Fasta &operator+(const Fasta &__rhs);
-    Fasta &operator+=(const Fasta &__rhs);
+    fasta &operator+(const fasta &__rhs);
+    fasta &operator+=(const fasta &__rhs);
 
-    bool operator==(Fasta *__rhs) const;
-    bool operator!=(Fasta *__rhs) const;
+    bool operator==(fasta *__rhs) const;
+    bool operator!=(fasta *__rhs) const;
 
     bool empty() const;
 
@@ -58,11 +58,11 @@ class Fasta {
 
     std::vector<block_t>::iterator begin();
     std::vector<block_t>::iterator end();
-};
+} fasta_t;
 
-Fasta read(std::stringstream &__ss);
-std::stringstream write(Fasta __obj);
+fasta_t read(std::stringstream &__ss);
+std::stringstream write(fasta_t __obj);
 
-} // namespace Fasta
+} // namespace fasta
 
 #endif // BIO_FASTA_HPP
