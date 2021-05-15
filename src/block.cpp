@@ -10,7 +10,7 @@
 
 #include "bio/fasta.hpp"
 
-namespace Fasta {
+namespace fasta {
 
 block::block(std::string header, std::string sequence) {
     this->header = header;

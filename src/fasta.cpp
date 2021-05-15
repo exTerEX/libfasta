@@ -9,78 +9,78 @@
 
 #include "bio/fasta.hpp"
 
-namespace Fasta {
+namespace fasta {
 
-Fasta::Fasta(block_t __block) { this->Blocks.push_back(__block); }
+fasta::fasta(block_t __block) { this->blocks.push_back(__block); }
 
-Fasta::Fasta(std::vector<block_t> __blocks) { this->Blocks = __blocks; }
+fasta::fasta(std::vector<block_t> __blocks) { this->blocks = __blocks; }
 
-std::vector<block_t> Fasta::getBlocks() const { return this->Blocks; }
+std::vector<block_t> fasta::getBlocks() const { return this->blocks; }
 
-block_t Fasta::operator[](unsigned __n) const { return this->at(__n); }
+block_t fasta::operator[](unsigned __n) const { return this->at(__n); }
 
-block_t Fasta::at(unsigned __n) const { return this->Blocks[__n]; }
+block_t fasta::at(unsigned __n) const { return this->blocks[__n]; }
 
-Fasta &Fasta::operator+(const Fasta &__rhs) {
+fasta &fasta::operator+(const fasta &__rhs) {
     for (auto &element : __rhs.getBlocks()) {
-        this->Blocks.push_back(element);
+        this->blocks.push_back(element);
     }
 
     return *this;
 }
 
-Fasta &Fasta::operator+=(const Fasta &__rhs) { return *this + __rhs; }
+fasta &fasta::operator+=(const fasta &__rhs) { return *this + __rhs; }
 
-bool Fasta::operator==(Fasta *__rhs) const {
-    if (this->Blocks.size() != __rhs->Blocks.size()) {
+bool fasta::operator==(fasta *__rhs) const {
+    if (this->blocks.size() != __rhs->blocks.size()) {
         return false;
     }
 
-    for (size_t index = 0; index < this->Blocks.size(); index++) {
-        if (this->Blocks[index].header != __rhs->Blocks[index].header) {
+    for (size_t index = 0; index < this->blocks.size(); index++) {
+        if (this->blocks[index].header != __rhs->blocks[index].header) {
             return false;
         }
 
-        if (this->Blocks[index].comment != __rhs->Blocks[index].comment) {
+        if (this->blocks[index].comment != __rhs->blocks[index].comment) {
             return false;
         }
 
-        if (this->Blocks[index].sequence != __rhs->Blocks[index].sequence) {
+        if (this->blocks[index].sequence != __rhs->blocks[index].sequence) {
             return false;
         }
     }
     return true;
 }
 
-bool Fasta::operator!=(Fasta *__rhs) const {
-    if (this->Blocks.size() != __rhs->Blocks.size()) {
+bool fasta::operator!=(fasta *__rhs) const {
+    if (this->blocks.size() != __rhs->blocks.size()) {
         return true;
     }
 
-    for (size_t index = 0; index < this->Blocks.size(); index++) {
-        if (this->Blocks[index].header != __rhs->Blocks[index].header) {
+    for (size_t index = 0; index < this->blocks.size(); index++) {
+        if (this->blocks[index].header != __rhs->blocks[index].header) {
             return true;
         }
 
-        if (this->Blocks[index].comment != __rhs->Blocks[index].comment) {
+        if (this->blocks[index].comment != __rhs->blocks[index].comment) {
             return true;
         }
 
-        if (this->Blocks[index].sequence != __rhs->Blocks[index].sequence) {
+        if (this->blocks[index].sequence != __rhs->blocks[index].sequence) {
             return true;
         }
     }
     return false;
 }
 
-bool Fasta::empty() const { return this->Blocks.empty(); }
+bool fasta::empty() const { return this->blocks.empty(); }
 
-void Fasta::push_back(const block_t &__block) { this->Blocks.push_back(__block); }
+void fasta::push_back(const block_t &__block) { this->blocks.push_back(__block); }
 
-std::size_t Fasta::size() const { return this->Blocks.size(); }
+std::size_t fasta::size() const { return this->blocks.size(); }
 
-std::vector<block_t>::iterator Fasta::begin() { return this->Blocks.begin(); }
+std::vector<block_t>::iterator fasta::begin() { return this->blocks.begin(); }
 
-std::vector<block_t>::iterator Fasta::end() { return this->Blocks.end(); }
+std::vector<block_t>::iterator fasta::end() { return this->blocks.end(); }
 
-} // namespace Fasta
+} // namespace fasta
