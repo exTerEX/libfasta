@@ -1,2 +1,1 @@
-cmakelang
-sphinx
+cmakelang==0.6.13
