@@ -49,7 +49,7 @@ void test_copy_constructor() {
 }
 
 void test_erase_function() {
-    Fasta::block_t b("header", "comment", "sequence");
+    fasta::block_t b("header", "comment", "sequence");
 
     b.erase();
 
