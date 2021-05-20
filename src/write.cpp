@@ -7,7 +7,7 @@
  */
 
 #include "bio/fasta.hpp"
-#include <sstream>
+#include <fstream>
 
 namespace Fasta {
 

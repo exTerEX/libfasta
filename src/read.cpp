@@ -7,8 +7,7 @@
  */
 
 #include "bio/fasta.hpp"
-#include <iostream>
-#include <sstream>
+#include <fstream>
 
 namespace Fasta {
 
@@ -53,6 +52,9 @@ Fasta read(std::stringstream &__ss) {
     // Flush before exiting
     fastaOutputObject.push_back(current);
     current.erase();
+
+    // Shrink output object
+    fastaOutputObject.shrink_to_fit();
 
     return fastaOutputObject;
 }
