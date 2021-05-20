@@ -14,5 +14,5 @@
         "cschlosser.doxdocgen",
         "cheshirekow.cmake-format"
     ],
-    "postCreateCommand": "pip install -r requirements.txt"
+    "postCreateCommand": "ci/full.sh"
 }

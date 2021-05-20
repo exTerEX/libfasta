@@ -13,7 +13,7 @@
 #include <string>
 #include <vector>
 
-namespace Fasta {
+namespace fasta {
 
 typedef struct block {
     std::string header;
@@ -28,30 +28,30 @@ typedef struct block {
     void erase();
 } block_t;
 
-class Fasta {
+typedef class fasta {
   private:
     std::vector<block_t> blocks;
 
   protected:
   public:
     // --- default constructor
-    explicit Fasta() = default;
+    fasta() = default;
 
     // --- fill
-    Fasta(block_t __x);
-    Fasta(std::vector<block_t> __x);
-    Fasta &operator=(std::vector<block_t> &__rhs);
+    fasta(block_t __x);
+    fasta(std::vector<block_t> __x);
+    fasta &operator=(std::vector<block_t> &__rhs);
 
     // --- copy
-    Fasta(const Fasta &__x) = default;
-    Fasta &operator=(const Fasta &__rhs) = default;
+    fasta(const fasta &__x) = default;
+    fasta &operator=(const fasta &__rhs) = default;
 
     // --- move
-    Fasta(Fasta &&__x) = default;
-    Fasta &operator=(Fasta &&__rhs) = default;
+    fasta(fasta &&__x) = default;
+    fasta &operator=(fasta &&__rhs) = default;
 
     // --- destructor
-    ~Fasta() = default;
+    ~fasta() = default;
 
     // --- iterator
     std::vector<block_t>::iterator begin() noexcept;
@@ -69,19 +69,19 @@ class Fasta {
 
     // --- modifiers
     void assign(size_t __n, const block_t &__x);
-    void assign(size_t __n, const Fasta &__x);
+    void assign(size_t __n, const fasta &__x);
     void push_back(const block_t &__x);
-    void push_back(const Fasta &__x);
+    void push_back(const fasta &__x);
     void clear() noexcept;
 
     // --- FASTA operations
-    bool operator==(Fasta *__rhs) const;
-    bool operator!=(Fasta *__rhs) const;
-};
+    bool operator==(fasta *__rhs) const;
+    bool operator!=(fasta *__rhs) const;
+} fasta_t;
 
-Fasta read(std::stringstream &__ss);
-std::stringstream write(Fasta __obj);
+fasta_t read(std::stringstream &__ss);
+std::stringstream write(fasta_t __obj);
 
-} // namespace Fasta
+} // namespace fasta
 
 #endif // BIO_FASTA_HPP

@@ -20,7 +20,7 @@ int main(int, char **) {
     file.close();
 
     // Read stringstream data into a FASTA object.
-    Fasta::Fasta data = Fasta::read(ss);
+    fasta::fasta_t data = fasta::read(ss);
 
     //
     // ! DO WHAT YOU WANT WITH THE FASTA OBJECT

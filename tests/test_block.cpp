@@ -16,7 +16,7 @@ int main(int, char **) {
 }
 
 void test_empty_init() {
-    Fasta::block_t b;
+    fasta::block_t b;
 
     assert(b.header == "");
     assert(b.comment == "");
@@ -24,7 +24,7 @@ void test_empty_init() {
 }
 
 void test_full_init() {
-    Fasta::block_t b("header", "comment", "sequence");
+    fasta::block_t b("header", "comment", "sequence");
 
     assert(b.header == "header");
     assert(b.comment == "comment");
@@ -32,7 +32,7 @@ void test_full_init() {
 }
 
 void test_half_init() {
-    Fasta::block_t b("header", "sequence");
+    fasta::block_t b("header", "sequence");
 
     assert(b.header == "header");
     assert(b.comment == "");
@@ -40,8 +40,8 @@ void test_half_init() {
 }
 
 void test_copy_constructor() {
-    Fasta::block_t b("header", "comment", "sequence");
-    Fasta::block_t c(b);
+    fasta::block_t b("header", "comment", "sequence");
+    fasta::block_t c(b);
 
     assert(b.header == c.header);
     assert(b.comment == c.comment);

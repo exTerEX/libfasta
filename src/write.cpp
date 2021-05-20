@@ -11,9 +11,9 @@
 
 #define EOL '\n'
 
-namespace Fasta {
+namespace fasta {
 
-std::stringstream write(Fasta __obj) {
+std::stringstream write(fasta_t __obj) {
     // std::string file_content;
     std::stringstream file_content;
 
@@ -63,4 +63,4 @@ std::stringstream write(Fasta __obj) {
     return file_content;
 }
 
-} // namespace Fasta
+} // namespace fasta
