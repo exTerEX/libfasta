@@ -13,7 +13,7 @@
 #include <sstream>
 
 int main(int, char **) {
-    std::fstream file("data/normal.fasta.gz", std::ios::in | std::ios::binary);
+    /*std::fstream file("data/normal.fasta.gz", std::ios::in | std::ios::binary);
 
     // Create a filter to decompress the gzipped file.
     boost::iostreams::filtering_streambuf<boost::iostreams::input> in;
@@ -35,5 +35,5 @@ int main(int, char **) {
         std::cout << "Header: " << block.header << std::endl;
         std::cout << "Comment:" << block.comment << std::endl;
         std::cout << "Sequence: " << block.sequence << std::endl;
-    }
+    }*/
 }
