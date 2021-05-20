@@ -10,48 +10,48 @@
 #include "bio/fasta.hpp"
 #include <utility>
 
-namespace Fasta {
+namespace fasta {
 
 // --- fill
-Fasta::Fasta(block_t __x) { this->blocks.push_back(__x); }
-Fasta::Fasta(std::vector<block_t> __x) { this->blocks = __x; }
-Fasta &Fasta::operator=(std::vector<block_t> &__rhs) {
+fasta::fasta(block_t __x) { this->blocks.push_back(__x); }
+fasta::fasta(std::vector<block_t> __x) { this->blocks = __x; }
+fasta &fasta::operator=(std::vector<block_t> &__rhs) {
     this->blocks = __rhs;
     return *this;
 }
 
 // --- iterator
-std::vector<block_t>::iterator Fasta::begin() noexcept { return this->blocks.begin(); }
-std::vector<block_t>::iterator Fasta::end() noexcept { return this->blocks.end(); }
+std::vector<block_t>::iterator fasta::begin() noexcept { return this->blocks.begin(); }
+std::vector<block_t>::iterator fasta::end() noexcept { return this->blocks.end(); }
 
 // --- capacity
-std::size_t Fasta::size() const noexcept { return this->blocks.size(); }
-bool Fasta::empty() const noexcept { return this->blocks.empty(); }
-void Fasta::shrink_to_fit() { this->blocks.shrink_to_fit(); }
+std::size_t fasta::size() const noexcept { return this->blocks.size(); }
+bool fasta::empty() const noexcept { return this->blocks.empty(); }
+void fasta::shrink_to_fit() { this->blocks.shrink_to_fit(); }
 
 // --- element access
-block_t Fasta::operator[](size_t __n) { return this->at(__n); }
-block_t Fasta::at(size_t __n) { return this->blocks[__n]; }
-std::vector<block_t> Fasta::data() noexcept { return this->blocks; }
+block_t fasta::operator[](size_t __n) { return this->at(__n); }
+block_t fasta::at(size_t __n) { return this->blocks[__n]; }
+std::vector<block_t> fasta::data() noexcept { return this->blocks; }
 
 // --- modifiers
-void Fasta::assign(size_t __n, const block_t &__x) { this->blocks.assign(__n, __x); }
-void Fasta::assign(size_t __n, const Fasta &__x) {
+void fasta::assign(size_t __n, const block_t &__x) { this->blocks.assign(__n, __x); }
+void fasta::assign(size_t __n, const fasta &__x) {
     for (const auto &element : __x.blocks) {
         this->blocks.assign(__n, element);
         __n++;
     }
 }
-void Fasta::push_back(const block_t &__x) { this->blocks.push_back(__x); }
-void Fasta::push_back(const Fasta &__x) {
+void fasta::push_back(const block_t &__x) { this->blocks.push_back(__x); }
+void fasta::push_back(const fasta &__x) {
     for (const auto &element : __x.blocks) {
         this->blocks.push_back(element);
     }
 }
-void Fasta::clear() noexcept { this->blocks.clear(); }
+void fasta::clear() noexcept { this->blocks.clear(); }
 
 // --- FASTA operations
-bool Fasta::operator==(Fasta *__rhs) const {
+bool fasta::operator==(fasta *__rhs) const {
     if (this->blocks.size() != __rhs->blocks.size()) {
         return false;
     }
@@ -71,6 +71,6 @@ bool Fasta::operator==(Fasta *__rhs) const {
     }
     return true;
 }
-bool Fasta::operator!=(Fasta *__rhs) const { return !(this == __rhs); }
+bool fasta::operator!=(fasta *__rhs) const { return !(this == __rhs); }
 
-} // namespace Fasta
+} // namespace fasta

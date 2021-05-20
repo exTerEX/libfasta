@@ -10,11 +10,11 @@
 #include "utilities/trim.hpp"
 #include <fstream>
 
-namespace Fasta {
+namespace fasta {
 
-Fasta read(std::stringstream &__ss) {
+fasta_t read(std::stringstream &__ss) {
     // Fasta object
-    Fasta fastaOutputObject;
+    fasta_t fastaOutputObject;
 
     // current block
     block_t current;
@@ -69,4 +69,4 @@ Fasta read(std::stringstream &__ss) {
     return fastaOutputObject;
 }
 
-} // namespace Fasta
+} // namespace fasta

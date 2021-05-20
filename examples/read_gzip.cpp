@@ -26,7 +26,7 @@ int main(int, char **) {
     boost::iostreams::copy(in, ss);
 
     // Read stringstream data into a FASTA object.
-    Fasta::Fasta data = Fasta::read(ss);
+    fasta::fasta_t data = fasta::read(ss);
 
     //
     // ! DO WHAT YOU WANT WITH THE FASTA OBJECT
