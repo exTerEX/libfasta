@@ -55,13 +55,13 @@ These blocks (stored in the datatype `block_t`) would then be stored in the fast
 
 ### Read/Write behavior
 
-When reading a file, the program use the following identifier [^1]:
+When reading a file, the program use the following identifier [1]:
 
-| Line value | Identifier [^1] |
-| ---------- | --------------- |
-| Header     | > or ;          |
-| Comment    | ;               |
-| Sequence   |                 |
+| Line value | Identifier [1] |
+| ---------- | -------------- |
+| Header     | > or ;         |
+| Comment    | ;              |
+| Sequence   |                |
 
 **NOTE**: The parser can only distinguish between a header and a comment if the comment follow after the header without the sequence in between and starts with ; at each new line of the comment. Example:
 
@@ -77,15 +77,15 @@ KLPDDFTGCVIAWNSVKQDALTGGNYGYLYRLFRKSKPLLNYFEPLFTLKPCDISNSTEAGQKLFNMLRLGKSEPWTLA
 LENVVGAKNPLFHVSND
 ```
 
-When writing a fasta file, the program use the following identifier [^1]:
+When writing a fasta file, the program use the following identifier [1]:
 
-| Line value | Identifier [^1] |
-| ---------- | --------------- |
-| Header     | >               |
-| Comment    | ;               |
-| Sequence   |                 |
+| Line value | Identifier [1] |
+| ---------- | -------------- |
+| Header     | >              |
+| Comment    | ;              |
+| Sequence   |                |
 
-[^1]: Identifier in this case means the first character per line, used to distinguish between what kind of content is on that line.
+[1]: Identifier in this case means the first character per line, used to distinguish between what kind of content is on that line.
 
 ---
 
