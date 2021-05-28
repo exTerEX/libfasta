@@ -80,6 +80,9 @@ typedef class fasta {
 } fasta_t;
 
 fasta_t read(std::stringstream &__ss);
+
+fasta_t read(const std::string __file);
+
 std::stringstream write(fasta_t __obj);
 
 } // namespace fasta

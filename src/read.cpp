@@ -69,4 +69,17 @@ fasta_t read(std::stringstream &__ss) {
     return fastaOutputObject;
 }
 
+fasta_t read(const std::string __file) {
+    std::fstream file(__file, std::ios::in);
+    std::stringstream ss;
+
+    // Move data to stringstream
+    ss << file.rdbuf();
+
+    // Read stringstream data into object
+    file.close();
+
+    return read(ss);
+}
+
 } // namespace fasta
