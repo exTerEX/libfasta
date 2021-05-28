@@ -10,17 +10,7 @@
 #include <sstream>
 
 int main(int, char **) {
-    std::fstream file("data/normal.fasta", std::ios::in);
-
-    // Move data to stringstream
-    std::stringstream ss;
-    ss << file.rdbuf();
-
-    // Close file
-    file.close();
-
-    // Read stringstream data into a FASTA object.
-    fasta::fasta_t data = fasta::read(ss);
+    fasta::fasta_t data = fasta::read("data/normal.fasta");
 
     //
     // ! DO WHAT YOU WANT WITH THE FASTA OBJECT
