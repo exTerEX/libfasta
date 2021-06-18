@@ -8,9 +8,9 @@ If you spot something new, open an issue using a template. We'll use the issue t
 
 ### Ready to make a change?
 
-1) Fork the project. If you don't know how to do this see [Fork the repo](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo#fork-an-example-repository).
-2) Change the files necessary, including documentation if needed.
-3) Open a pull request & get it reviewed.
+1. Fork the project. If you don't know how to do this see [Fork the repo](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo#fork-an-example-repository).
+2. Change the files necessary, including documentation if needed.
+3. Open a pull request & get it reviewed.
 
 Always comply with the [CODE_OF_CONDUCT](https://github.com/exTerEX/libfasta/blob/main/.github/CODE_OF_CONDUCT.md).
 
@@ -22,14 +22,14 @@ Futher details can be found at [llvm.org](https://llvm.org/docs/CodingStandards.
 
 ## Filestructure
 
-When developing this 
+When developing this
 
 | Folder / file | Description                                                      |
 | ------------: | :--------------------------------------------------------------- |
-| .github       | Contain files related to github docs, actions and configuration. |
-| data          | Contain test files and/or data used for testing.                 |
-| doc           | Contain code and documentation related to library.               |
-| example       | Contain example of how to use the library.                       |
-| include/fasta | Public header files for library.                                 |
-| src           | Source code for library.                                         |
-| test          | Code related to running unit and integration tests.              |
+|       .github | Contain files related to github docs, actions and configuration. |
+|          data | Contain test files and/or data used for testing.                 |
+|           doc | Contain code and documentation related to library.               |
+|       example | Contain example of how to use the library.                       |
+|   include/bio | Public header files for library.                                 |
+|           src | Source code for library.                                         |
+|          test | Code related to running unit and integration tests.              |
