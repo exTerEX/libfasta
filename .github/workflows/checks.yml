@@ -1,0 +1,30 @@
+name: Run checks
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions: read-all
+
+jobs:
+  format:
+    name: Check format
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Install clang-format
+        run: sudo apt install --no-install-recommends clang-format
+
+      - name: Test Format
+        run: |
+          if [[ $(clang-format --dry-run -style=file \
+            src/**/*.cpp src/**/*.hpp tests/**/*.cpp) ]];
+          then
+            echo "Format using clang-format to pass this check"
+            exit 1
+          fi
