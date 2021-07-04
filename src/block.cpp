@@ -30,4 +30,4 @@ void block::erase() {
     this->sequence.erase();
 }
 
-} // namespace Fasta
+} // namespace fasta
